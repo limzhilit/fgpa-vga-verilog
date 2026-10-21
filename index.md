@@ -16,29 +16,13 @@ AIM: Run provided example code and modify it to show understanding
 5. Generate bitstream
 6. Program device 
 
-<img src="https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/images/VGAPrjSum.png">
-### **Template Code**
-Outline the structure and design of the Verilog code templates you were given. What do they do? Include reference to how a VGA interface works. Guideline: 2/3 short paragraphs, consider including screenshot(s).
-
-
+<img src="./docs/assets/images/project.png">### **Template Code**
 - `Basys3_Master.xdc` – FPGA pin assignment and timing constraints.
 - `Testbench.v` – Provides test inputs for simulating the design.
 - `VGAColourStripes.v` – Generates RGB pixel colours and defines the visual pattern.
 - `VGASync.v` – Generates VGA synchronisation signals and pixel coordinates.
 - `VGATop.v` – Top-level module connecting the clock, VGA timing and colour generation modules.
-
-
-flowchart TD
-    A["FPGA Input Clock"] --> B["Clock Wizard"]
-    B -->|"25 MHz clock"| C["VGASync"]
-    B -->|"25 MHz clock"| D["ColourStripes"]
-
-    C -->|"row, col"| D
-    C -->|"vid_on"| E["RGB Output Gating"]
-    D -->|"red, green, blue"| E
-
-    C -->|"hSync, vSync"| F["VGA Monitor"]
-    E -->|"RGB signals"| F
+<img src="./docs/assets/images/sources.png">
 
 ### **Simulation**
 Explain the simulation process. Reference any important details, include a well-selected screenshot of the simulation. Guideline: 1/2 short paragraphs.
