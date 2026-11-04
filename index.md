@@ -25,7 +25,9 @@ AIM: Run provided example code and modify it to show understanding
 <img src="./docs/assets/images/sources.png">
 
 ### **Simulation**
-Explain the simulation process. Reference any important details, include a well-selected screenshot of the simulation. Guideline: 1/2 short paragraphs.
+- Set the parameter to a smaller unit to reduce simulation time and make waveforms easier to observe
+<img src="./docs/assets/images/simulation.png">
+
 ### **Synthesis**
 Describe the synthesis and implementation processes. Consider including 1/2 useful screenshot(s). Guideline: 1/2 short paragraphs.
 ### **Demonstration**
