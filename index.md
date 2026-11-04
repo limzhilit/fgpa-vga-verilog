@@ -30,6 +30,7 @@ AIM: Run provided example code and modify it to show understanding
 
 ### **Synthesis**
 Describe the synthesis and implementation processes. Consider including 1/2 useful screenshot(s). Guideline: 1/2 short paragraphs.
+
 ### **Demonstration**
 Perhaps add a picture of your demo. Guideline: 1/2 sentences.
 
@@ -44,6 +45,7 @@ Describe the synthesis & implementation outputs for your design, are there any d
 ### **Demonstration**
 If you get your own design working on the Basys3 board, take a picture! Guideline: 1-2 sentences.
 
+In a monitor, each row has a wire to activate the row, and each column have 3 datalines for RGB respectively 
 ## **More Markdown Basics**
 This is a paragraph. Add an empty line to start a new paragraph.
 
