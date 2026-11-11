@@ -29,12 +29,19 @@ AIM: Run provided example code and modify it to show understanding
 <img src="./docs/assets/images/simulation.png">
 
 ### **Synthesis**
+<img src="./docs/assets/images/synthesis-overview.png">
+<img src="./docs/assets/images/synthesis-cloak.png">
+<img src="./docs/assets/images/synthesis-blue.png">
+
 Describe the synthesis and implementation processes. Consider including 1/2 useful screenshot(s). Guideline: 1/2 short paragraphs.
 
 ### **Demonstration**
 Perhaps add a picture of your demo. Guideline: 1/2 sentences.
 
 ## **My VGA Design Edit**
+I attempt a first change to the code with the examples shown by lecturer which include reducing the stripes to 3 and setting the colour.
+This is acheived by changing the col variable range and RGB value. 
+<img src="./docs/assets/images/first-change.png">
 Introduce your own design idea. Consider how complex/achievabble this might be or otherwise. Reference any research you do online (use hyperlinks).
 ### **Code Adaptation**
 Briefly show how you changed the template code to display a different image. Demonstrate your understanding. Guideline: 1-2 short paragraphs.
