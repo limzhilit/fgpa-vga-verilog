@@ -25,7 +25,9 @@ AIM: Run provided example code and modify it to show understanding
 <img src="./docs/assets/images/sources.png">
 
 ## **My VGA Design Edit**
-I attempt a first change to the code with the examples shown by lecturer which include reducing the stripes to 3 and setting the colour.
+- I attempt a first change to the code with the examples shown by lecturer which include reducing the stripes to 3 and setting the colour.
+- I changed the col variable with the row variable to produce horizontal stripe with different colours. 
+- I divide row and col by a width and XOR them and AND with 1 so I get the LSB with is 0 if both divided row and col are even else 1 [if (((row / 40) ^ (col / 40)) & 1'b1)]
 
 ### **Simulation**
 - Set the parameter to a smaller unit to reduce simulation time and make waveforms easier to observe
@@ -40,6 +42,10 @@ Describe the synthesis and implementation processes. Consider including 1/2 usef
 
 ### **Demonstration**
 <img src="./docs/assets/images/first-change.jpg">
+<img src="./docs/assets/images/second-change.jpg">
+<img src="./docs/assets/images/third-change.jpg">
+
+
 first edit 
 Perhaps add a picture of your demo. Guideline: 1/2 sentences.
 
