@@ -31,6 +31,46 @@ AIM: Run provided example code and modify it to show understanding
 - Added a clock counter and an offset to flip the checker 
 - Changed the formula of the offset for a smooth diagonal movement
 
+Code 
+```verilog
+reg [5:0] offset;
+reg [23:0] speed_counter;
+
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        offset <= 6'd0;
+        speed_counter <= 24'd0;
+    end
+    else begin
+        if (speed_counter >= 24'd1_000_000) begin
+            speed_counter <= 24'd0;
+
+            if (offset == 6'd39)
+                offset <= 6'd0;
+            else
+                offset <= offset + 1'b1;
+        end
+        else begin
+            speed_counter <= speed_counter + 1'b1;
+        end
+    end
+end
+
+
+ Next state & output logic state  machine 
+always@* begin
+    if ((((row + offset) / 40) ^ ((col + offset) / 40)) & 1'b1) begin      
+      red_next   <= 4'b0101;
+      green_next <= 4'b1010;
+      blue_next  <= 4'b0000;
+   end
+   else begin
+      red_next   <= 4'b1111;
+      green_next <= 4'b0101;
+      blue_next  <= 4'b1010;
+   end
+end
+```
 
 ### **Simulation**
 - Set the parameter to a smaller unit to reduce simulation time and make waveforms easier to observe
