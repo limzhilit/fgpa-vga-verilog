@@ -27,7 +27,10 @@ AIM: Run provided example code and modify it to show understanding
 ## **My VGA Design Edit**
 - I attempt a first change to the code with the examples shown by lecturer which include reducing the stripes to 3 and setting the colour.
 - I changed the col variable with the row variable to produce horizontal stripe with different colours. 
-- I divide row and col by a width and XOR them and AND with 1 so I get the LSB with is 0 if both divided row and col are even else 1 [if (((row / 40) ^ (col / 40)) & 1'b1)]
+- I divide row and col by a width and XOR them and AND with 1 so the least significant bit is 0 if both divided row and col are even else 1 [if (((row / 40) ^ (col / 40)) & 1'b1)]
+- Added a clock counter and an offset to flip the checker 
+- Changed the formula of the offset for a smooth diagonal movement 
+
 
 ### **Simulation**
 - Set the parameter to a smaller unit to reduce simulation time and make waveforms easier to observe
@@ -39,6 +42,21 @@ AIM: Run provided example code and modify it to show understanding
 <img src="./docs/assets/images/synthesis-blue.png">
 
 Describe the synthesis and implementation processes. Consider including 1/2 useful screenshot(s). Guideline: 1/2 short paragraphs.
+
+### **RTL Analysis**
+
+RTL Analysis (Register Transfer Level Analysis) is a stage in FPGA design where Vivado examines your Verilog code and translates it into a hardware representation.
+Below shows the schematic at the RTL:
+<img src="./docs/assets/images/rtl-analysis.png">
+<img src="./docs/assets/images/rtl-analysis-close.png">
+Closer up we can see the individual gates implementing the logic that is programmed in code for example ADD, DIVIDE, XOR, etc...
+
+### **Implementation Analysis**
+In the implementation schematics, each bit in hcount have a look up table (LUT)
+<img src="./docs/assets/images/implementation.png">
+<img src="./docs/assets/images/implementation-lut.png">
+
+
 
 ### **Demonstration**
 <img src="./docs/assets/images/first-change.jpg">
