@@ -29,7 +29,7 @@ AIM: Run provided example code and modify it to show understanding
 - I changed the col variable with the row variable to produce horizontal stripe with different colours. 
 - I divide row and col by a width and XOR them and AND with 1 so the least significant bit is 0 if both divided row and col are even else 1 [if (((row / 40) ^ (col / 40)) & 1'b1)]
 - Added a clock counter and an offset to flip the checker 
-- Changed the formula of the offset for a smooth diagonal movement 
+- Changed the formula of the offset for a smooth diagonal movement
 
 
 ### **Simulation**
@@ -72,12 +72,12 @@ It determines where the hardware goes and how the components connect physically.
 <img src="./docs/assets/images/third-change.jpg">
 
 <video controls width="100%">
-  <source src="assets/images/fourth-implementation.mp4" type="video/mp4">
+  <source src="./docs/assets/videos/fourth-implementation.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
 <video controls width="100%">
-  <source src="assets/images/fifth-implementation.mp4" type="video/mp4">
+  <source src="./docs/assets/videos/fifth-implementation.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
 
