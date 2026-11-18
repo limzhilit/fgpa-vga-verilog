@@ -77,6 +77,67 @@ always@* begin
 end
 ```
 
+Code for smiley face 
+```verilog
+
+integer dx, dy;
+integer eye_dx, eye_dy;
+integer distance_squared;
+
+always @* begin
+
+    // Default background: black
+    red_next   = 4'b0000;
+    green_next = 4'b0000;
+    blue_next  = 4'b0000;
+
+    // Calculate distance from centre of face
+    dx = $signed({1'b0, col}) - 320;
+    dy = $signed({1'b0, row}) - 240;
+
+    distance_squared = dx * dx + dy * dy;
+
+    // Yellow circular face (radius 100)
+    if (distance_squared <= 10000) begin
+
+        red_next   = 4'b1111;
+        green_next = 4'b1111;
+        blue_next  = 4'b0000;
+
+        // Left eye (centre: 285, 210)
+        eye_dx = $signed({1'b0, col}) - 285;
+        eye_dy = $signed({1'b0, row}) - 210;
+
+        if ((eye_dx * eye_dx + eye_dy * eye_dy) <= 36) begin
+            red_next   = 4'b0000;
+            green_next = 4'b0000;
+            blue_next  = 4'b0000;
+        end
+
+        // Right eye (centre: 355, 210)
+        eye_dx = $signed({1'b0, col}) - 355;
+        eye_dy = $signed({1'b0, row}) - 210;
+
+        if ((eye_dx * eye_dx + eye_dy * eye_dy) <= 36) begin
+            red_next   = 4'b0000;
+            green_next = 4'b0000;
+            blue_next  = 4'b0000;
+        end
+
+        // Smiling mouth (lower half of annulus)
+        if ((distance_squared >= 4200) &&
+            (distance_squared <= 4900) &&
+            (row >= 240)) begin
+
+            red_next   = 4'b0000;
+            green_next = 4'b0000;
+            blue_next  = 4'b0000;
+        end
+
+    end
+end
+```
+
 ### **Simulation**
 - Set the parameter to a smaller unit to reduce simulation time and make waveforms easier to observe
 <img src="./docs/assets/images/simulation.png">
