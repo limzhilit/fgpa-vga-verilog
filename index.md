@@ -31,6 +31,11 @@ AIM: Run provided example code and modify it to show understanding
 - Added a clock counter and an offset to flip the checker 
 - Changed the formula of the offset for a smooth diagonal movement
 
+- Implemented a new smiley face project, lot's of error in code but uploaded anyway because it is amusing:
+    - did not end if statement
+    - did not handle signed negative value
+- fixed the error and got a working smiley face 
+
 Code 
 ```verilog
 reg [5:0] offset;
@@ -120,6 +125,12 @@ It determines where the hardware goes and how the components connect physically.
   <source src="./docs/assets/videos/fifth-implementation.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
+<video controls width="100%">
+  <source src="./docs/assets/videos/sixth-implementation.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
+<img src="./docs/assets/images/seventh-change.jpg">
+
 
 ### **Additional**
 In a monitor, each row has a wire to activate the row, and each column have 3 datalines for RGB respectively.
