@@ -36,12 +36,6 @@ AIM: Run provided example code and modify it to show understanding
 - Set the parameter to a smaller unit to reduce simulation time and make waveforms easier to observe
 <img src="./docs/assets/images/simulation.png">
 
-### **Synthesis**
-<img src="./docs/assets/images/synthesis-overview.png">
-<img src="./docs/assets/images/synthesis-clock.png">
-<img src="./docs/assets/images/synthesis-blue.png">
-
-Describe the synthesis and implementation processes. Consider including 1/2 useful screenshot(s). Guideline: 1/2 short paragraphs.
 
 ### **RTL Analysis**
 
@@ -51,11 +45,25 @@ Below shows the schematic at the RTL:
 <img src="./docs/assets/images/rtl-analysis-close.png">
 Closer up we can see the individual gates implementing the logic that is programmed in code for example ADD, DIVIDE, XOR, etc...
 
-### **Implementation Analysis**
+### **Synthesis and Implementation Analysis**
 In the implementation schematics, each bit in hcount have a look up table (LUT)
 <img src="./docs/assets/images/implementation.png">
 <img src="./docs/assets/images/implementation-lut.png">
 
+1. Synthesis schematic
+Synthesis converts your Verilog RTL into FPGA logic components, such as:
+- LUTs (Look-Up Tables)
+- Flip-flops
+- Multiplexers
+- Carry chains
+- Other FPGA resources
+It determines what hardware needs to exist.
+2. Implementation schematic
+Implementation takes the synthesised netlist and performs:
+- Optimisation: Further optimises the circuit.
+- Placement: Assigns logic components to physical locations on the FPGA.
+- Routing: Connects the components using physical FPGA routing resources.
+It determines where the hardware goes and how the components connect physically.
 
 
 ### **Demonstration**
@@ -63,10 +71,15 @@ In the implementation schematics, each bit in hcount have a look up table (LUT)
 <img src="./docs/assets/images/second-change.jpg">
 <img src="./docs/assets/images/third-change.jpg">
 
+<video controls width="100%">
+  <source src="assets/images/fourth-implementation.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
 
-first edit 
-Perhaps add a picture of your demo. Guideline: 1/2 sentences.
-
+<video controls width="100%">
+  <source src="assets/images/fifth-implementation.mp4" type="video/mp4">
+  Your browser does not support HTML video.
+</video>
 
 ### **Additional**
 In a monitor, each row has a wire to activate the row, and each column have 3 datalines for RGB respectively.
