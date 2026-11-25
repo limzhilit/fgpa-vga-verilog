@@ -27,8 +27,8 @@ AIM: Run provided example code and modify it to show understanding
 ## **My VGA Design Edit**
 - I attempt a first change to the code with the examples shown by lecturer which include reducing the stripes to 3 and setting the colour.
 - I changed the col variable with the row variable to produce horizontal stripe with different colours. 
-- I divide row and col by a width and XOR them and AND with 1 so the least significant bit is 0 if both divided row and col are even else 1 [if (((row / 40) ^ (col / 40)) & 1'b1)]
-- Added a clock counter and an offset to flip the checker 
+- I divide row and col by a width which set the width for a square, then XOR them and AND with 1 so the least significant bit is 0 if both divided row and col are even else 1 [if (((row / 40) ^ (col / 40)) & 1'b1)], if the LSB is 1 show green and if 0 show pink, it creates a checkered pattern
+- Added a clock counter and an offset to flip the checker pattern so green show as pink and pink becomes green in next frame
 - Changed the formula of the offset for a smooth diagonal movement
 
 - Implemented a new smiley face project, lot's of error in code but uploaded anyway because it is amusing:
