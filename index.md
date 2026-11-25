@@ -29,8 +29,16 @@ AIM: Run provided example code and modify it to show understanding
 ## **My VGA Design Edit**
 - I attempt a first change to the code with the examples shown by lecturer which include reducing the stripes to 3 and setting the colour.
 - I changed the col variable with the row variable to produce horizontal stripe with different colours. 
-- I divide row and col by a width which set the width for a square, then XOR them and AND with 1 so the least significant bit is 0 if both divided row and col are even else 1 [if (((row / 40) ^ (col / 40)) & 1'b1)], if the LSB is 1 show green and if 0 show pink, it creates a checkered pattern
-- Added a clock counter and an offset to flip the checker pattern so green show as pink and pink becomes green in next frame
+- create a checkered pattern 
+```
+1. Divide row and column coordinates by 40 to create 40 × 40 pixel blocks.
+2. XOR the resulting block indices.
+3. AND with 1'b1 to extract the least significant bit.
+4. Depending on the result, select one of two colours.
+The XOR produces alternating patterns because adjacent blocks have different parity.
+```
+
+- Added a clock counter and an offset to flip the checker pattern so green show as pink and pink becomes green in next time speed counter is set
 - Changed the formula of the offset for a smooth diagonal movement
 
 - Implemented a new smiley face project, lot's of error in code but uploaded anyway because it is amusing:
@@ -152,7 +160,11 @@ RTL Analysis (Register Transfer Level Analysis) is a stage in FPGA design where 
 Below shows the schematic at the RTL:
 <img src="./docs/assets/images/rtl-analysis.png">
 <img src="./docs/assets/images/rtl-analysis-close.png">
-Clicking into the u_colour_stripe block we can see the individual gates implementing the logic that is programmed in code for example ADD, DIVIDE, XOR, etc...
+Clicking into the u_colour_stripe block we can see the individual gates implementing the logic that is programmed in code for example: 
+- Addition for coordinate offsets.
+- Division for determining individual square regions.
+- XOR for generating alternating patterns.
+- AND for extracting the least significant bit.
 
 ### **Synthesis and Implementation Analysis**
 In the implementation schematics, each bit in hcount have a look up table (LUT)
@@ -200,3 +212,13 @@ It determines where the hardware goes and how the components connect physically.
 
 ### **Additional**
 In a monitor, each row has a wire to activate the row, and each column have 3 datalines for RGB respectively.
+
+
+### **Learning Outcomes**
+
+Through this project, I gained practical experience in:
+1. Digital Logic Design: Understanding how Verilog expressions translate into combinational and sequential logic.
+2. Coordinate-Based Graphics: Using mathematical equations to generate graphical shapes directly from pixel coordinates.
+3. Sequential Logic: Implementing counters and registers to control animation timing.
+4. FPGA Design Flow: Understanding the differences between RTL analysis, synthesis, implementation and bitstream generation.
+5. Simulation and Debugging: Identifying logical errors, debugging Verilog code and validating hardware behaviour through simulation.
