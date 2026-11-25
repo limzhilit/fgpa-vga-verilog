@@ -43,39 +43,55 @@ The XOR produces alternating patterns because adjacent blocks have different par
 
 - Implemented a new smiley face project
 
-The smiley face is generated using mathematical equations to determine the colour of each pixel based on its coordinates (col, row).
 
-1. Face – Circle Equation
+<div style="border: 1px solid #d1d5db; border-radius: 10px; padding: 20px; margin: 15px 0; background: #f8fafc;">
 
-[
-(x-320)^2+(y-240)^2 \leq 100^2
-]
+<p><strong>Smiley Face – Mathematical Implementation</strong></p>
 
-This defines a filled circle with a radius of 100 pixels, centred at (320, 240). Pixels inside the circle are coloured yellow, while pixels outside remain black.
+<p>The smiley face is generated using mathematical equations to determine the colour of each pixel based on its coordinates (<code>col</code>, <code>row</code>).</p>
 
-2. Eyes – Smaller Circles
+<hr>
 
-[
-(x-x_c)^2+(y-y_c)^2 \leq 6^2
-]
+<p><strong>1. Face – Circle Equation</strong></p>
 
-Two smaller circles with a radius of 6 pixels are positioned at (285, 210) and (355, 210). These regions are coloured black to create the eyes.
+<p><code>(x - 320)² + (y - 240)² ≤ 100²</code></p>
 
-3. Mouth – Lower Half of an Annulus
+<p>This defines a filled circle with a radius of 100 pixels, centred at (320, 240). Pixels inside the circle are coloured yellow, while pixels outside remain black.</p>
 
-[
-4200 \leq (x-320)^2+(y-240)^2 \leq 4900
-]
+<p><strong>2. Eyes – Smaller Circles</strong></p>
 
-[
-y \geq 240
-]
+<p><code>(x - xc)² + (y - yc)² ≤ 6²</code></p>
 
-The mouth is created using an annulus, which is the region between two concentric circles. The inner radius is approximately 64.8 pixels, while the outer radius is 70 pixels. Restricting the region to the lower half creates a curved arc that resembles a smile.
+<p>Two smaller circles with a radius of 6 pixels are positioned at (285, 210) and (355, 210). These regions are coloured black to create the eyes.</p>
 
-there's lot's of error in code but uploaded anyway because it is amusing:
-    - did not end if statement
-    - did not handle signed negative value
+<p><strong>3. Mouth – Lower Half of an Annulus</strong></p>
+
+<p><code>4200 ≤ (x - 320)² + (y - 240)² ≤ 4900</code></p>
+<p><code>y ≥ 240</code></p>
+
+<p>The mouth is created using an annulus, which is the region between two concentric circles. The inner radius is approximately 64.8 pixels, while the outer radius is 70 pixels. Restricting the region to the lower half creates a curved arc that resembles a smile.</p>
+
+<p><strong>4. Pixel Colour Generation</strong></p>
+
+<ul>
+<li>Yellow for pixels inside the face.</li>
+<li>Black for the eyes and mouth.</li>
+<li>Black for the background outside the face.</li>
+</ul>
+
+<hr>
+
+<p><strong>Initial Implementation Issues</strong></p>
+
+<p>The first implementation contained several errors, but I uploaded it anyway because I found the result amusing:</p>
+
+<ul>
+<li>Missing <code>end</code> statement for an <code>if</code> statement.</li>
+<li>Did not properly handle signed negative values.</li>
+</ul>
+
+</div>
+
 
 - fixed the error and got a working smiley face 
 
