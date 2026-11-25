@@ -42,7 +42,7 @@ The XOR produces alternating patterns because adjacent blocks have different par
 - Changed the formula of the offset for a smooth diagonal movement
 
 - Implemented a new smiley face project
-```
+
 The smiley face is generated using mathematical equations to determine the colour of each pixel based on its coordinates (col, row).
 
 1. Face – Circle Equation
@@ -76,7 +76,7 @@ The mouth is created using an annulus, which is the region between two concentri
 there's lot's of error in code but uploaded anyway because it is amusing:
     - did not end if statement
     - did not handle signed negative value
-```
+
 - fixed the error and got a working smiley face 
 
 
