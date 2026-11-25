@@ -41,9 +41,42 @@ The XOR produces alternating patterns because adjacent blocks have different par
 - Added a clock counter and an offset to flip the checker pattern so green show as pink and pink becomes green in next time speed counter is set
 - Changed the formula of the offset for a smooth diagonal movement
 
-- Implemented a new smiley face project, lot's of error in code but uploaded anyway because it is amusing:
+- Implemented a new smiley face project
+```
+The smiley face is generated using mathematical equations to determine the colour of each pixel based on its coordinates (col, row).
+
+1. Face – Circle Equation
+
+[
+(x-320)^2+(y-240)^2 \leq 100^2
+]
+
+This defines a filled circle with a radius of 100 pixels, centred at (320, 240). Pixels inside the circle are coloured yellow, while pixels outside remain black.
+
+2. Eyes – Smaller Circles
+
+[
+(x-x_c)^2+(y-y_c)^2 \leq 6^2
+]
+
+Two smaller circles with a radius of 6 pixels are positioned at (285, 210) and (355, 210). These regions are coloured black to create the eyes.
+
+3. Mouth – Lower Half of an Annulus
+
+[
+4200 \leq (x-320)^2+(y-240)^2 \leq 4900
+]
+
+[
+y \geq 240
+]
+
+The mouth is created using an annulus, which is the region between two concentric circles. The inner radius is approximately 64.8 pixels, while the outer radius is 70 pixels. Restricting the region to the lower half creates a curved arc that resembles a smile.
+
+there's lot's of error in code but uploaded anyway because it is amusing:
     - did not end if statement
     - did not handle signed negative value
+```
 - fixed the error and got a working smiley face 
 
 
