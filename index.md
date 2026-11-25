@@ -186,28 +186,50 @@ Implementation takes the synthesised netlist and performs:
 - Routing: Connects the components using physical FPGA routing resources.
 It determines where the hardware goes and how the components connect physically.
 
+### Demonstration
 
-### **Demonstration**
-<img src="./docs/assets/images/first-change.jpg">
-<img src="./docs/assets/images/second-change.jpg">
-<img src="./docs/assets/images/third-change.jpg">
+<div class="demo-grid">
+  <img src="./docs/assets/images/first-change.jpg" alt="First change">
+  <img src="./docs/assets/images/second-change.jpg" alt="Second change">
 
-<video controls width="100%">
-  <source src="./docs/assets/videos/fourth-implementation.mp4" type="video/mp4">
-  Your browser does not support HTML video.
-</video>
+  <video controls>
+    <source src="./docs/assets/videos/fourth-implementation.mp4" type="video/mp4">
+  </video>
 
-<video controls width="100%">
-  <source src="./docs/assets/videos/fifth-implementation.mp4" type="video/mp4">
-  Your browser does not support HTML video.
-</video>
+  <video controls>
+    <source src="./docs/assets/videos/fifth-implementation.mp4" type="video/mp4">
+  </video>
 
-<video controls width="100%">
-  <source src="./docs/assets/videos/sixth-implementation.mp4" type="video/mp4">
-  Your browser does not support HTML video.
-</video>
+  <video controls>
+    <source src="./docs/assets/videos/sixth-implementation.mp4" type="video/mp4">
+  </video>
 
-<img src="./docs/assets/images/seventh-implementation.jpg">
+  <img src="./docs/assets/images/seventh-implementation.jpg" alt="Seventh implementation">
+</div>
+
+<style>
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.demo-grid img,
+.demo-grid video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #111;
+}
+
+@media (max-width: 600px) {
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
 
 ### **Additional**
