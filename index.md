@@ -140,6 +140,7 @@ end
 
 ### **Simulation**
 - Set the parameter to a smaller unit to reduce simulation time and make waveforms easier to observe
+- The RGB value does not change because the first 6 rows are black in the smile picture
 <img src="./docs/assets/images/simulation.png">
 
 
