@@ -16,7 +16,9 @@ AIM: Run provided example code and modify it to show understanding
 5. Generate bitstream
 6. Program device 
 
-<img src="./docs/assets/images/project.png">### **Template Code**
+<img src="./docs/assets/images/project.png">
+
+### **Template Code**
 - `Basys3_Master.xdc` – FPGA pin assignment and timing constraints.
 - `Testbench.v` – Provides test inputs for simulating the design.
 - `VGAColourStripes.v` – Generates RGB pixel colours and defines the visual pattern.
@@ -150,7 +152,7 @@ RTL Analysis (Register Transfer Level Analysis) is a stage in FPGA design where 
 Below shows the schematic at the RTL:
 <img src="./docs/assets/images/rtl-analysis.png">
 <img src="./docs/assets/images/rtl-analysis-close.png">
-Closer up we can see the individual gates implementing the logic that is programmed in code for example ADD, DIVIDE, XOR, etc...
+Clicking into the u_colour_stripe block we can see the individual gates implementing the logic that is programmed in code for example ADD, DIVIDE, XOR, etc...
 
 ### **Synthesis and Implementation Analysis**
 In the implementation schematics, each bit in hcount have a look up table (LUT)
